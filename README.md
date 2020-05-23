@@ -19,3 +19,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# how to add bootstrap:
+https://travishorn.com/adding-bootstrap-to-a-vue-cli-project-98c2a30e0ed0
+
+
