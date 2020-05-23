@@ -12,6 +12,10 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+  <div>
+    <i class="fab fa-medium"></i>
+    <i class="far fa-envelope"></i>
+  </div>
   </el-row>
 </div>
 </template>
