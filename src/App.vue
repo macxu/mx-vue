@@ -19,4 +19,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+@import 'element-ui/lib/theme-chalk/display.css';
 </style>
