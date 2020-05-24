@@ -27,11 +27,31 @@
 </template>
 <script>
 import Header from '@/components/home/Header'
+import SampleService from '@/api/SampleService'
 // import Footer from '@/components/Footer'
 export default {
   name: 'home',
   components: {
     Header
+  },
+  data () {
+    return {
+      loading: false,
+      users: []
+    }
+  },
+  mounted () {
+    this.load()
+  },
+  methods: {
+    load () {
+      var self = this
+      SampleService.getUsers().then(function (resp) {
+        self.users = resp.data
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   }
 }
 </script>
