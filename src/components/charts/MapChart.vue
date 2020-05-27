@@ -16,11 +16,6 @@ export default {
   },
   data () {
     return {
-      dataList: [
-        {name: '北京', value: 12},
-        {name: '天津', value: 23},
-        {name: '上海', value: 34}
-      ],
       chartOptions: {
         tooltip: {
           formatter: function (params, ticket, callback) {
@@ -32,7 +27,7 @@ export default {
           max: 1500,
           left: 'left',
           top: 'bottom',
-          text: ['高', '低'],
+          text: ['多', '少'],
           inRange: {
             color: ['#e0ffff', '#006edd']
           },
@@ -65,13 +60,16 @@ export default {
         },
         series: [
           {
-            name: '信息量',
+            name: '粉丝人数',
             type: 'map',
             geoIndex: 0,
             data: [
-              {name: '北京', value: 12},
-              {name: '天津', value: 23},
-              {name: '上海', value: 34}
+              {name: '北京', value: 1200},
+              {name: '湖北', value: 1100},
+              {name: '浙江', value: 699},
+              {name: '广东', value: 799},
+              {name: '新疆', value: 799},
+              {name: '上海', value: 1355}
             ]
           }
         ]
