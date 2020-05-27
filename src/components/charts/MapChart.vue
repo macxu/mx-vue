@@ -1,0 +1,126 @@
+<template>
+<div style="max-width:1100px; padding-top:10px">
+  <v-chart :options="chartOptions"/>
+</div>
+</template>
+<script>
+import ECharts from 'vue-echarts'
+import 'echarts/lib/chart/line'
+import 'echarts/lib/component/polar'
+import 'echarts/map/js/china.js'
+// import SampleService from '@/api/SampleService'
+export default {
+  name: 'mapChart',
+  components: {
+    'v-chart': ECharts
+  },
+  data () {
+    return {
+      dataList: [
+        {name: '北京', value: 12},
+        {name: '天津', value: 23},
+        {name: '上海', value: 34}
+      ],
+      chartOptions: {
+        tooltip: {
+          formatter: function (params, ticket, callback) {
+            return params.seriesName + '<br />' + params.name + '：' + params.value
+          }
+        },
+        visualMap: {
+          min: 0,
+          max: 1500,
+          left: 'left',
+          top: 'bottom',
+          text: ['高', '低'],
+          inRange: {
+            color: ['#e0ffff', '#006edd']
+          },
+          show: true
+        },
+        geo: {
+          map: 'china',
+          roam: false,
+          zoom: 1.23,
+          label: {
+            normal: {
+              show: true,
+              fontSize: '10',
+              color: 'rgba(0,0,0,0.7)'
+            }
+          },
+          itemStyle: {
+            normal: {
+              borderColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            emphasis: {
+              areaColor: '#F3B329',
+              shadowOffsetX: 0,
+              shadowOffsetY: 0,
+              shadowBlur: 20,
+              borderWidth: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        },
+        series: [
+          {
+            name: '信息量',
+            type: 'map',
+            geoIndex: 0,
+            data: [
+              {name: '北京', value: 12},
+              {name: '天津', value: 23},
+              {name: '上海', value: 34}
+            ]
+          }
+        ]
+      }
+    }
+  },
+  mounted () {
+    this.load()
+  },
+  methods: {
+    load () {
+      // var self = this
+      // SampleService.getUsers().then(function (resp) {
+      //   self.users = resp.data
+      // }).catch(err => {
+      //   console.log(err)
+      // })
+    }
+  }
+}
+</script>
+<style scoped>
+.wider-container {
+  width:1200px;
+}
+.el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+</style>

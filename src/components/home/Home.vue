@@ -1,18 +1,19 @@
 <template>
 <div style="max-width:1100px; padding-top:10px">
   <header></header>
-  <el-row>
-  </el-row>
+  <map-chart></map-chart>
 </div>
 </template>
 <script>
 import Header from '@/components/home/Header'
+import MapChart from '@/components/charts/MapChart'
 import SampleService from '@/api/SampleService'
 // import Footer from '@/components/Footer'
 export default {
   name: 'home',
   components: {
-    Header
+    Header,
+    MapChart
   },
   data () {
     return {
