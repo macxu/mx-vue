@@ -1,27 +1,7 @@
 <template>
-<div style="max-width:1100px; padding-top:50px">
+<div style="max-width:1100px; padding-top:10px">
+  <header></header>
   <el-row>
-    <el-col :span="8"><div class="grid-content bg-purple">xxxxx</div></el-col>
-    <el-col :span="8"><div class="grid-content bg-purple-light">yyyy</div></el-col>
-    <el-col :span="8"><div class="grid-content bg-purple">zzzz</div></el-col>
-  </el-row>
-  <el-row>
-    <header></header>
-    <el-button type="primary">Primary</el-button>
-    <div>XXXXX</div>
-    <div>
-      <img src="@/assets/logo.png">
-    </div>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-  With Bootstrap!
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-  <div>
-    <i class="fab fa-medium"></i>
-    <i class="far fa-envelope"></i>
-  </div>
   </el-row>
 </div>
 </template>
