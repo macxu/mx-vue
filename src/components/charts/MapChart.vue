@@ -8,7 +8,7 @@ import ECharts from 'vue-echarts'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/component/polar'
 import 'echarts/map/js/china.js'
-// import SampleService from '@/api/SampleService'
+import SampleService from '@/api/SampleService'
 export default {
   name: 'mapChart',
   components: {
@@ -16,6 +16,8 @@ export default {
   },
   data () {
     return {
+      chartTitle: '',
+      chartData: [],
       chartOptions: {
         tooltip: {
           formatter: function (params, ticket, callback) {
@@ -81,12 +83,12 @@ export default {
   },
   methods: {
     load () {
-      // var self = this
-      // SampleService.getUsers().then(function (resp) {
-      //   self.users = resp.data
-      // }).catch(err => {
-      //   console.log(err)
-      // })
+      var self = this
+      SampleService.getGeoStats('1').then(function (resp) {
+        self.users = resp.data
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }

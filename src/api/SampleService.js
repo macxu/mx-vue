@@ -13,6 +13,12 @@ export default {
     const params = {}
     return Vue.http.get(path, { params: params, headers: headers })
   },
+  getGeoStats (type) {
+    const path = 'geo/' + type
+
+    const params = {}
+    return Vue.http.get(path, { params: params })
+  }
   // getCenterAds () {
   //   const path = 'ads/?position=center'
   //   const params = {}
@@ -57,9 +63,4 @@ export default {
   //   const headers = getHeader()
   //   return Vue.http.delete(path, { params: {}, headers: headers })
   // },
-  getSchemas () {
-    let path = 'ads/schemas'
-    const params = {}
-    return Vue.http.get(path, { params: params })
-  }
 }

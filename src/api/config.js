@@ -1,7 +1,7 @@
 // import Vue from 'vue'
 
-// export const API_HOST = 'http://localhost/api'
-export const API_HOST = 'https://jsonplaceholder.typicode.com'
+export const API_HOST = 'http://localhost:7777/api'
+// export const API_HOST = 'https://jsonplaceholder.typicode.com'
 
 export function getHeader () {
   return {}
